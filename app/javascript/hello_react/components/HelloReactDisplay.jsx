@@ -39,13 +39,15 @@ class HelloReactDisplay extends React.Component {
   }
 
   render () {
-    const nextNameId = Number(this.state.name.id) + 1;
+    const name = this.state.name
+    const nextNameId = name.next_id;
+    const previousNameId = name.previous_id;
 
     return (
       <div>
-        <Link to={`/?id=${nextNameId}`}>Next</Link>
-        <p>{this.state.name.first}</p>
-        <p>{this.state.name.last}</p>
+        { nextNameId && <Link to={`/?id=${nextNameId}`}>Next</Link> }
+        { previousNameId && <Link to={`/?id=${previousNameId}`}>Previous</Link> }
+        <p>{`Hello, ${name.first} ${name.last}`}</p>
       </div>
     );
   }
