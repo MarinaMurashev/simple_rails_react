@@ -43,7 +43,7 @@ class HelloReactDisplay extends React.Component {
 
     return (
       <div>
-        <Link to={`/?name=${nextNameId}`}>Next</Link>
+        <Link to={`/?id=${nextNameId}`}>Next</Link>
         <p>{this.state.name.first}</p>
         <p>{this.state.name.last}</p>
       </div>
